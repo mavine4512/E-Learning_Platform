@@ -23,9 +23,37 @@ CourseConnect is a modern, responsive e-learning platform built with React and T
 
 ### Prerequisites
 
-- Node.js (v14 or later)
+- Node.js (v18 or later)
 - npm (v6 or later)
 
 ### Installation
 
 1. Clone the repository:
+```bash
+git clone https://github.com/mavine4512/E-Learning_Platform.git
+```
+
+
+2. Install dependencies:
+
+```bash
+yarn install
+```
+
+3. Start the development server:
+
+```bash
+yarn start
+```
+
+## Contributions
+Contributions are welcome! Feel free to submit issues or pull requests.
+
+## How the project look like
+ ![alt text](https://github.com/mavine4512/E-Learning_Platform/blob/main/src/assets/begin.png?raw=true)
+  
+  ![alt text](https://github.com/mavine4512/E-Learning_Platform/blob/main/src/assets/landingpage.png?raw=true)
+
+## Author
+
+- [Mavine Naaman](https://github.com/mavine4512)
