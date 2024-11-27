@@ -67,7 +67,8 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             step={1}
             value={priceRange}
             onValueChange={(value) => setPriceRange(value as [number, number])}
-            className="my-4"
+            className="my-4 bg-blue-200 dark:bg-blue-700 rounded-lg h-2"
+          
           />
           <div className="flex justify-between mt-2">
             <span>${priceRange[0]}</span>
