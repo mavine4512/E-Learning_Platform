@@ -1,8 +1,8 @@
 import { Course } from '../types/course';
-import ReactImage from './images/reactimage.jpeg';
-import RN from './images/reactnative.png';
-import UI_UX from './images/ui_ux.jpeg';
-import Typescr from './images/typescript.jpeg';
+import ReactImage from '../assets/images/reactimage.jpeg';
+import RN from '../assets/images/reactnative.png';
+import UI_UX from '../assets/images/ui_ux.jpeg';
+import Typescr from '../assets/images/typescript.jpeg';
 
 
 export const courses: Course[] = [

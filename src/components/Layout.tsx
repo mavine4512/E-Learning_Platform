@@ -6,7 +6,7 @@ interface LayoutProps {
 
 export const Layout: React.FC<LayoutProps> = ({ children }) => {
   return (
-    <div className="flex min-h-screen bg-background">
+    <div className="flex flex-col lg:flex-row min-h-screen bg-background">
       {children}
     </div>
   );

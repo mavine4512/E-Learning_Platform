@@ -42,27 +42,37 @@ export const CourseListingPage: React.FC<CourseListingPageProps> = ({ onPurchase
 
   return (
     <Layout>
-      <div className="flex">
-        <Sidebar onFilterChange={handleFilterChange} />
-        <div className="flex-1 p-6">
-          <div className="mb-6 flex justify-between items-center">
-            <h1 className="text-3xl font-bold">Available Courses</h1>
+      <div className="flex flex-col lg:flex-row w-screen">
+        {/* Sidebar */}
+        <Sidebar className="w-full lg:w-1/4 p-4 h-full overflow-auto" onFilterChange={handleFilterChange} />
+        
+        {/* Main Content */}
+        <div className="flex-1 p-4 lg:p-6 h-full overflow-auto">
+          {/* Header */}
+          <div className="mb-6 flex flex-col sm:flex-row justify-between items-center">
+            <h1 className="text-2xl lg:text-3xl font-bold text-center sm:text-left mb-4 sm:mb-0">
+              Available Courses
+            </h1>
             <Select onValueChange={(value: 'popularity' | 'price_low_to_high' | 'price_high_to_low') => setSortBy(value)}>
-              <SelectTrigger className="w-[180px]">
+              <SelectTrigger className="w-full sm:w-[180px]">
                 <SelectValue placeholder="Sort by" />
               </SelectTrigger>
               <SelectContent>
                 <SelectItem value="popularity">Popularity</SelectItem>
                 <SelectItem value="price_low_to_high">Price: Low to High</SelectItem>
-                <SelectItem value="price_high_to_high">Price: High to Low</SelectItem>
+                <SelectItem value="price_high_to_low">Price: High to Low</SelectItem>
               </SelectContent>
             </Select>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+
+          {/* Course Cards */}
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 lg:gap-6">
             {currentCourses.map((course) => (
               <CourseCard key={course.id} course={course} onPurchase={() => onPurchase(course)} />
             ))}
           </div>
+
+          {/* Pagination */}
           <div className="mt-6 flex justify-center">
             <Pagination
               currentPage={currentPage}

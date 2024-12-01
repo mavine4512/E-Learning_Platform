@@ -13,7 +13,7 @@ export const CourseCard: React.FC<CourseCardProps> = ({ course, onPurchase }) =>
   return (
     <Card className="w-full">
       <CardHeader>
-        <img src={course.image} alt={course.title} className="w-full h-40 object-cover mb-4 rounded-md" />
+        <img src={course.image} alt={course.title} className="w-full h-60 object-cover mb-4 rounded-md" />
         <CardTitle>{course.title}</CardTitle>
       </CardHeader>
       <CardContent>

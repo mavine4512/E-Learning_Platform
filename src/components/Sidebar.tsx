@@ -3,9 +3,12 @@ import { Slider } from './ui/slider';
 import { Checkbox } from './ui/checkbox';
 import { Label } from './ui/label';
 import { RadioGroup, RadioGroupItem } from './ui/radio-group';
+import { Button } from './ui/button';
+import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 interface SidebarProps {
   onFilterChange: (filters: FilterOptions) => void;
+  className?: string;
 }
 
 interface FilterOptions {
@@ -21,6 +24,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   const [selectedCategories, setSelectedCategories] = useState<string[]>([]);
   const [priceRange, setPriceRange] = useState<[number, number]>([0, 200]);
   const [skillLevel, setSkillLevel] = useState<string>('');
+  const [isOpen, setIsOpen] = useState(false);
 
   const handleCategoryChange = (category: string) => {
     setSelectedCategories(prev => 
@@ -39,7 +43,17 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
   }, [selectedCategories, priceRange, skillLevel, onFilterChange]);
 
   return (
-    <aside className="w-64 bg-card p-6 border-r">
+    <aside className={`bg-card border-r transition-all duration-300 ease-in-out ${isOpen ? 'w-68' : 'w-0 lg:w-64'}`}>
+      <Button
+        variant="ghost"
+        size="icon"
+        className="lg:hidden absolute top-2 right-4"
+        onClick={() => setIsOpen(!isOpen)}
+      >
+        {isOpen ? <ChevronLeft /> : <ChevronRight />}
+      </Button>
+
+      <div className={`p-6 ${isOpen ? 'block' : 'hidden lg:block'}`}>
       <h2 className="text-2xl font-semibold mb-4">Filters</h2>
       
       <div className="space-y-6">
@@ -87,6 +101,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ onFilterChange }) => {
             ))}
           </RadioGroup>
         </div>
+      </div>
       </div>
     </aside>
   );
