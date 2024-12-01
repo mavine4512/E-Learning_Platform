@@ -1,6 +1,6 @@
 # CourseConnect E-Learning Platform
 
-CourseConnect is a modern, responsive e-learning platform built with React and TypeScript. It provides a user-friendly interface for browsing, filtering, and enrolling in online courses.
+CourseConnect is a modern, responsive e-learning platform built with React Tailwind and TypeScript. It provides a user-friendly interface for browsing, filtering, and enrolling for online courses.
 
 ## Features
 
